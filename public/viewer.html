@@ -55,7 +55,7 @@
 <body>
   <div class="viewer">
     <div class="content">
-      <iframe id="webpage" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+      <iframe id="webpage"></iframe>
     </div>
     <div class="video">
       <video autoplay muted loop playsinline>
@@ -68,7 +68,7 @@
     const params = new URLSearchParams(window.location.search);
     const url = params.get('url');
     if (url) {
-      document.getElementById('webpage').src = url;
+      document.getElementById('webpage').src = '/proxy?url=' + encodeURIComponent(url);
     } else {
       window.location.href = 'index.html';
     }
