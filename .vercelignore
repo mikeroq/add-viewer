@@ -1,2 +1,4 @@
 .vercel
 .git
+node_modules
+!public/subway.mp4
