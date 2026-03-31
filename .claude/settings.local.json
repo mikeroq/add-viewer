@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git remote:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"Initial commit: ADD Viewer - iframe webpage viewer with side YouTube video:*)"
+    ]
+  }
+}
