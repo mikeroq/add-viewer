@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADD Viewer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #e94560;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #a0a0b0;
+    }
+    .input-group {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    input {
+      flex: 1;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      border: 2px solid #333;
+      border-radius: 8px;
+      background: #16213e;
+      color: #e0e0e0;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus { border-color: #e94560; }
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      background: #e94560;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #c73650; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ADD Viewer</h1>
+    <p>Can't focus on reading? Load any webpage with a side video to keep your brain engaged.</p>
+    <form class="input-group" onsubmit="loadPage(event)">
+      <input type="url" id="urlInput" placeholder="https://example.com" required>
+      <button type="submit">Load</button>
+    </form>
+  </div>
+  <script>
+    function loadPage(e) {
+      e.preventDefault();
+      const url = document.getElementById('urlInput').value;
+      window.location.href = 'viewer.html?url=' + encodeURIComponent(url);
+    }
+  </script>
+</body>
+</html>
