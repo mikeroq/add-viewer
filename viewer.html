@@ -28,10 +28,10 @@
       display: flex;
       align-items: flex-start;
     }
-    .video iframe {
+    .video video {
       width: 100%;
-      aspect-ratio: 16/9;
-      border: none;
+      height: 100%;
+      object-fit: cover;
     }
     .back-btn {
       position: fixed;
@@ -58,11 +58,9 @@
       <iframe id="webpage" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
     </div>
     <div class="video">
-      <iframe
-        src="https://www.youtube.com/embed/QPW3XwBoQlw?autoplay=1&mute=1&loop=1&playlist=QPW3XwBoQlw&controls=0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-      ></iframe>
+      <video autoplay muted loop playsinline>
+        <source src="subway.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
   <button class="back-btn" onclick="window.location.href='index.html'">Back</button>
